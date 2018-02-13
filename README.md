@@ -21,6 +21,6 @@ client.connect("{token}");
 
 ### Session
 
-* `.connect({string: token});`\n
+* `.connect({string: token});`
 	- `string: token`: The token you used when you [created your discord app](https://discordapp.com/developers/applications/me).
 
