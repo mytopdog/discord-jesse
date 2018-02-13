@@ -1,6 +1,6 @@
 {
     "name": "discord-jesse",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A discord api wrapper",
     "main": "src/Jesse.js",
     "directories": {
@@ -16,5 +16,19 @@
         "request": "^2.83.0",
         "snekfetch": "^3.6.4",
         "ws": "^4.0.0"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mytopdog/discord-jesse.git"
+    },
+    "keywords": [
+    "discord",
+    "api",
+    "wrapper"
+  ],
+    "bugs": {
+        "url": "https://github.com/mytopdog/discord-jesse/issues"
+    },
+    "homepage": "https://github.com/mytopdog/discord-jesse#readme"
 }
