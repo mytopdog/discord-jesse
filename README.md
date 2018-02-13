@@ -18,12 +18,11 @@ client.connect("{token}");
 ```
 
 ## Docs:
+For a full, complete list of docs, go to [the official documentation website (Coming soon)](https://jesse-discord.js/documentation).
 
 ### Session
 
-For a full, complete list of docs, go to [the official documentation website (Coming soon)](https://jesse-discord.js/documentation).
-
-```
+```js
 var client = require("discord-jesse")();
 ```
 
