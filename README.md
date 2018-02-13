@@ -21,6 +21,12 @@ client.connect("{token}");
 
 ### Session
 
+For a full, complete list of docs, go to [the official documentation website (Coming soon)](https://jesse-discord.js/documentation).
+
+```
+var client = require("discord-jesse")();
+```
+
 * `.connect({string: token});`
 	- `string: token`: The token it gives when you create a bot user for [your app](https://discordapp.com/developers/applications/me).
 
