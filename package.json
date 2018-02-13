@@ -1,6 +1,6 @@
 {
 	"name": "discord-jesse",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "A discord api wrapper",
 	"main": "src/Jesse.js",
 	"directories": {
