@@ -1,5 +1,5 @@
 # Discord-Jesse
-#### Important: Discord-Jesse is a brand-new project and is not, what-so-ever finished, please think before using as there are much better alternatives at this time.
+##### Important: Discord-Jesse is a brand-new project and is not, what-so-ever finished, please think before using as there are much better alternatives at this time.
 
 
 ## Examples:
@@ -21,6 +21,6 @@ client.connect("{token}");
 
 ### Session
 
-* `.connect({string: token});`
-`{string: token}` - The token you used when you [created your discord app]("https://discordapp.com/developers/applications/me").
+* `.connect({string: token});`\n
+	- `string: token`: The token you used when you [created your discord app]("https://discordapp.com/developers/applications/me").
 
