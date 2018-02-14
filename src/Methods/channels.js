@@ -10,9 +10,9 @@ module.exports = function () {
 				return _this.cat_methods().fromRaw(raw);
 			}
 
-			if (raw.guild_id) {
-				raw.guild_id = _this.guilds[raw.guild_id].id;
-				raw.guild = _this.guilds[raw.guild_id];
+			if (op && op.id) {
+				raw.guild_id = op.id;
+				raw.guild = _this.guilds[op.id];
 			}
 
 			raw.message = function (message) {
@@ -23,7 +23,9 @@ module.exports = function () {
 			raw.lastMessage = function (cb) {
 				request.req("GET",
 						`/channels/${raw.id}/message/${raw.last_message_id}`, {}, _this.token)
-					.then(cb)
+					.then(m => {
+						cb(_this.message_methods().fromRaw(m));
+					})
 					.catch(console.log);
 			}
 

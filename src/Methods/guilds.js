@@ -7,9 +7,10 @@ module.exports = function () {
 		fromRaw: function (raw) {
 			newChannels = {}
 
-			for (let i = 0; i < raw.channels; i++) {
-				newChannels[raw.channels[i].id] = _this.channel_methods().fromRaw(raw.channels[i]);
+			for (let i = 0; i < raw.channels.length; i++) {
+				newChannels[raw.channels[i].id] = _this.channel_methods().fromRaw(raw.channels[i], raw);
 			}
+			raw.channels = newChannels;
 
 			raw.createChannel = function (type, opt) {
 				return new Promise((res, rej) => {

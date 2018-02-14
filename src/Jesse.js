@@ -15,6 +15,7 @@ module.exports = function () {
 		permission_methods: require("./Methods/permissions.js"),
 		role_methods: require("./Methods/roles.js"),
 		emoji_methods: require("./Methods/emojis.js"),
-		cat_methods: require("./Methods/category.js")
+		cat_methods: require("./Methods/category.js"),
+		gu_methods: require("./Methods/guilduser.js")
 	});
 }

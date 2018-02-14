@@ -62,20 +62,23 @@ module.exports = function (TOKEN) {
 				_this.amOfGuilds = message.d.guilds.length;
 			}
 			if (t == "GUILD_CREATE") {
+				_this.guilds[message.d.id] = message.d;
+
 				var guild = _this.guild_methods().fromRaw(message.d);
 
 				_this.guilds[guild.id] = guild;
+
+				for (i = 0; i < Object.keys(guild.channels).length; i++) {
+					var item = guild.channels[Object.keys(guild.channels)[i]];
+
+					_this.channels[item.id] = item;
+				}
 
 				if (Object.keys(_this.guilds).length == _this.amOfGuilds) {
 					_("READY", "");
 				}
 				if (Object.keys(_this.guilds).length > _this.amOfGuilds) {
 					_(t, guild);
-				}
-
-				for (i = 0; i < Object.keys(guild.channels).length; i++) {
-					let item = guild.channels[Object.keys(guild.channels)[i]];
-					_this.channels[item.id] = _this.channel_methods().fromRaw(item, guild);
 				}
 			}
 			if (t == "CHANNEL_CREATE") {
