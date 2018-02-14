@@ -1,21 +1,22 @@
 var request = require("../Connection/lib/connection.js");
 
 module.exports = function () {
-    var _this = this;
+	var _this = this;
+	return {
+		fromRaw: function (raw) {
+			raw.channel = _this.channels[raw.channel_id];
 
-    return {
-        fromRaw: function (raw) {
-            return new Promise((res, rej) => {
-                raw.channel = {};
+			if (raw.channel.guild) raw.guild = raw.channel.guild;
 
-                request.req("GET", `/channels/${raw.channel_id}`, {}, _this.token).then(channelP => {
-                    _this.channel_methods().fromRaw(channelP).then(channel => {
-                        raw.channel = channel
+			raw.reply = function (content) {
+				return new Promise((res, rej) => {
+					request.req("POST", `/channels/${raw.channel.id}/messages`, {
+						content: content
+					}, _this.token);
+				});
+			}
 
-                        res(raw);
-                    }).catch(rej);
-                }).catch(rej);
-            });
-        }
-    }
+			return raw;
+		}
+	}
 }
